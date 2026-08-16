@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Página educativa sobre bullying e cyberbullying no ambiente escolar.">
+<title>Respeito Sempre — Bullying e Cyberbullying</title>
+
+<style>
+:root{
+  --bg:#070719;
+  --bg2:#10102d;
+  --purple:#8b4dff;
+  --purple2:#b56cff;
+  --blue:#4d8dff;
+  --text:#f8f7ff;
+  --muted:#b9b8cc;
+  --line:rgba(255,255,255,.1);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* MENU */
+
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6%;
+  background:rgba(7,7,25,.75);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:800;
+}
+
+.logo{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,var(--purple),#5b31cf);
+  box-shadow:0 0 25px rgba(139,77,255,.45);
+}
+
+.navlinks{
+  display:flex;
+  gap:28px;
+  color:#d8d7e6;
+  font-size:14px;
+}
+
+.navlinks a{
+  position:relative;
+  padding:8px 0;
+  transition:.25s;
+}
+
+.navlinks a:hover{
+  color:white;
+}
+
+.navlinks a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:2px;
+  background:var(--purple2);
+  transition:.25s;
+}
+
+.navlinks a:hover::after{
+  width:100%;
+}
+
+.navbtn{
+  padding:11px 18px;
+  border-radius:12px;
+  border:1px solid rgba(181,108,255,.35);
+  background:rgba(139,77,255,.14);
+  color:#fff;
+  font-weight:700;
+}
+
+/* HERO */
+
+.hero{
+  min-height:760px;
+  padding:150px 6% 90px;
+  display:grid;
+  grid-template-columns:1.02fr .98fr;
+  align-items:center;
+  gap:50px;
+  position:relative;
+  overflow:hidden;
+
+  background:
+    radial-gradient(circle at 75% 45%,rgba(105,62,255,.24),transparent 34%),
+    radial-gradient(circle at 10% 10%,rgba(78,110,255,.14),transparent 30%),
+    linear-gradient(135deg,#08081d,#11102f);
+}
+
+.hero h1{
+  font-size:clamp(48px,6vw,82px);
+  line-height:.95;
+  letter-spacing:-3px;
+}
+
+.gradient{
+  background:linear-gradient(
+    90deg,
+    #fff,
+    #b96dff,
+    #716bff
+  );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.kicker{
+  display:inline-flex;
+  padding:8px 12px;
+  border-radius:99px;
+  background:rgba(139,77,255,.12);
+  border:1px solid rgba(181,108,255,.25);
+  color:#d5baff;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:22px;
+}
+
+.hero p{
+  max-width:610px;
+  margin:26px 0;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.75;
+}
+
+.actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:14px 20px;
+  border-radius:13px;
+  font-weight:800;
+  transition:.25s;
+}
+
+.btn.primary{
+  background:linear-gradient(135deg,#8d45ff,#6135d6);
+  box-shadow:0 12px 35px rgba(139,77,255,.3);
+}
+
+.btn.secondary{
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.04);
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+/* ILUSTRAÇÃO */
+
+.hero-art{
+  position:relative;
+  height:500px;
+  display:grid;
+  place-items:center;
+}
+
+.orbit{
+  position:absolute;
+  width:380px;
+  height:380px;
+  border:1px solid rgba(181,108,255,.2);
+  border-radius:50%;
+  animation:spin 18s linear infinite;
+}
+
+.orbit:before,
+.orbit:after{
+  content:"";
+  position:absolute;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#b56cff;
+  box-shadow:0 0 22px #b56cff;
+}
+
+.orbit:before{
+  top:20px;
+  left:90px;
+}
+
+.orbit:after{
+  bottom:50px;
+  right:30px;
+  background:#5b8fff;
+  box-shadow:0 0 22px #5b8fff;
+}
+
+.person{
+  width:235px;
+  height:300px;
+  border-radius:120px 120px 45px 45px;
+  background:linear-gradient(160deg,#292453,#17162f);
+  position:relative;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+  animation:float 4s ease-in-out infinite;
+}
+
+.person:before{
+  content:"";
+  position:absolute;
+  width:108px;
+  height:108px;
+  border-radius:50%;
+  background:#d99d76;
+  top:34px;
+  left:64px;
+}
+
+.person:after{
+  content:"";
+  position:absolute;
+  width:150px;
+  height:100px;
+  border-radius:80px 80px 20px 20px;
+  background:#5c3de0;
+  left:43px;
+  top:125px;
+}
+
+.bubble{
+  position:absolute;
+  padding:14px 18px;
+  border-radius:16px;
+  font-size:25px;
+  background:white;
+  color:#17152d;
+  box-shadow:0 20px 70px rgba(0,0,0,.28);
+  animation:float 3s ease-in-out infinite;
+}
+
+.b1{
+  top:65px;
+  right:15px;
+}
+
+.b2{
+  bottom:75px;
+  left:10px;
+  animation-delay:.8s;
+}
+
+.b3{
+  top:160px;
+  left:0;
+  animation-delay:1.4s;
+}
+
+/* SEÇÕES */
+
+.section{
+  padding:100px 6%;
+  background:#f6f7fb;
+  color:#16152b;
+}
+
+.section.dark{
+  background:#0d0c25;
+  color:white;
+}
+
+.container{
+  max-width:1180px;
+  margin:auto;
+}
+
+.section-head{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 55px;
+}
+
+.eyebrow{
+  color:#7040e9;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:12px;
+}
+
+.section-head h2{
+  font-size:clamp(32px,4vw,52px);
+  margin:10px 0;
+}
+
+.section-head p{
+  color:#69687a;
+  line-height:1.7;
+}
+
+.dark .section-head p{
+  color:#aaa9bd;
+}
+
+/* CARDS */
+
+.grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.card{
+  background:white;
+  border:1px solid #e7e7ef;
+  border-radius:24px;
+  padding:32px;
+  box-shadow:0 18px 50px rgba(23,20,55,.08);
+  transition:.3s;
+  position:relative;
+  overflow:hidden;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 25px 65px rgba(23,20,55,.14);
+}
+
+.icon{
+  width:58px;
+  height:58px;
+  border-radius:17px;
+  display:grid;
+  place-items:center;
+  font-size:26px;
+  background:#eee8ff;
+  color:#6937d8;
+  margin-bottom:20px;
+}
+
+.card h3{
+  font-size:28px;
+  margin-bottom:13px;
+}
+
+.card p{
+  color:#66657a;
+  line-height:1.75;
+}
+
+.list{
+  display:grid;
+  gap:13px;
+  margin-top:22px;
+}
+
+.list li{
+  list-style:none;
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  color:#39384c;
+}
+
+.check{
+  width:23px;
+  height:23px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#e8e0ff;
+  color:#6937d8;
+  font-size:13px;
+  font-weight:900;
+  flex:none;
+}
+
+.note{
+  margin-top:25px;
+  padding:18px;
+  border-radius:15px;
+  background:#f0ebff;
+  color:#403568;
+  font-size:14px;
+}
+
+/* PASSOS */
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.step{
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:rgba(255,255,255,.045);
+  transition:.3s;
+}
+
+.step:hover{
+  transform:translateY(-7px);
+  background:rgba(139,77,255,.1);
+}
+
+.num{
+  width:38px;
+  height:38px;
+  border-radius:11px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#8b4dff,#4e6cff);
+  font-weight:900;
+  margin-bottom:22px;
+}
+
+.step h3{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.step p{
+  color:#aeadc1;
+  font-size:14px;
+  line-height:1.7;
+}
+
+/* CTA */
+
+.cta{
+  margin-top:65px;
+  padding:48px;
+  border-radius:28px;
+  background:linear-gradient(120deg,#201451,#11143b);
+  border:1px solid rgba(181,108,255,.22);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.cta h2{
+  font-size:34px;
+  max-width:700px;
+}
+
+.cta p{
+  color:#bdbbd0;
+  margin-top:9px;
+}
+
+/* FOOTER */
+
+footer{
+  padding:45px 6%;
+  background:#060614;
+  color:#aaa9bc;
+  border-top:1px solid var(--line);
+}
+
+.footerin{
+  max-width:1180px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.footerbrand{
+  color:white;
+  font-weight:800;
+}
+
+.small{
+  font-size:13px;
+  margin-top:8px;
+}
+
+/* ANIMAÇÕES */
+
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:none;
+}
+
+@keyframes float{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-14px);
+  }
+}
+
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+/* BOTÃO TOPO */
+
+.top{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#7140e7;
+  color:white;
+  z-index:80;
+  box-shadow:0 10px 30px rgba(113,64,231,.35);
+  opacity:0;
+  pointer-events:none;
+  transition:.25s;
+}
+
+.top.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* CELULAR */
+
+@media(max-width:850px){
+
+  .navlinks{
+    display:none;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    padding-top:125px;
+    text-align:center;
+  }
+
+  .hero p{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .actions{
+    justify-content:center;
+  }
+
+  .hero-art{
+    height:390px;
+  }
+
+  .grid2{
+    grid-template-columns:1fr;
+  }
+
+  .steps{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .cta{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media(max-width:520px){
+
+  .nav{
+    padding:0 5%;
+  }
+
+  .navbtn{
+    display:none;
+  }
+
+  .hero{
+    padding-left:5%;
+    padding-right:5%;
+  }
+
+  .hero h1{
+    letter-spacing:-2px;
+  }
+
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  .section{
+    padding:75px 5%;
+  }
+
+  .card{
+    padding:25px;
+  }
+
+  .cta{
+    padding:30px;
+  }
+}
+</style>
+</head>
+
+<body id="inicio">
+
+<!-- MENU -->
+<nav class="nav">
+
+  <a class="brand" href="#inicio">
+
+    <div class="logo">
+      🛡️
+    </div>
+
+    <span>
+      RESPEITO<br>
+      SEMPRE
+    </span>
+
+  </a>
+
+  <div class="navlinks">
+
+    <a href="#inicio">Início</a>
+
+    <a href="#bullying">Bullying</a>
+
+    <a href="#cyberbullying">Cyberbullying</a>
+
+    <a href="#combater">Como combater</a>
+
+    <a href="#ajuda">Ajuda</a>
+
+  </div>
+
+  <a class="navbtn" href="#combater">
+    💜 Seja gentil
+  </a>
+
+</nav>
+
+
+<!-- HERO -->
+<header class="hero">
+
+  <div class="hero-copy reveal">
+
+    <div class="kicker">
+      ● PROJETO EDUCATIVO
+    </div>
+
+    <h1>
+      BULLYING E<br>
+      <span class="gradient">
+        CYBERBULLYING
+      </span>
+    </h1>
+
+    <p>
+      Respeito é a melhor escolha. Todos merecem um ambiente escolar seguro,
+      onde possam aprender, crescer e conviver sem medo de agressões ou humilhações.
+    </p>
+
+    <div class="actions">
+
+      <a class="btn primary" href="#combater">
+        👥 Vamos combater juntos
+      </a>
+
+      <a class="btn secondary" href="#bullying">
+        ▶ Saiba mais
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- ILUSTRAÇÃO -->
+  <div class="hero-art reveal">
+
+    <div class="orbit"></div>
+
+    <div class="person"></div>
+
+    <div class="bubble b1">
+      💬 😡
+    </div>
+
+    <div class="bubble b2">
+      💬 💔
+    </div>
+
+    <div class="bubble b3">
+      #@%!
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- BULYING -->
+<section class="section" id="bullying">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="eyebrow">
+        ENTENDA
+      </div>
+
+      <h2>
+        Bullying e Cyberbullying
+      </h2>
+
+      <p>
+        Conhecer o problema é o primeiro passo para saber como agir
+        e ajudar outras pessoas.
+      </p>
+
+    </div>
+
+
+    <div class="grid2">
+
+      <!-- BULLYING -->
+
+      <article class="card reveal">
+
+        <div class="icon">
+          👥
+        </div>
+
+        <h3>
+          O que é Bullying?
+        </h3>
+
+        <p>
+          É um comportamento agressivo e repetitivo que pode acontecer
+          no ambiente escolar, causando sofrimento e prejudicando a convivência.
+        </p>
+
+        <ul class="list">
+
+          <li>
+            <span class="check">✓</span>
+            Apelidos ofensivos e provocações
+          </li>
+
+          <li>
+            <span class="check">✓</span>
+            Ameaças e intimidações
+          </li>
+
+          <li>
+            <span class="check">✓</span>
+            Exclusão e isolamento
+          </li>
+
+          <li>
+            <span class="check">✓</span>
+            Humilhações e agressões físicas
+          </li>
+
+        </ul>
+
+        <div class="note">
+          💜 Essas atitudes podem afetar a autoestima,
+          o bem-estar e a convivência de quem sofre com elas.
+        </div>
+
+      </article>
+
+
+      <!-- CYBERBULLYING -->
+
+      <article class="card reveal" id="cyberbullying">
+
+        <div class="icon"
+             style="background:#e7efff;color:#356ee0">
+
+          💻
+
+        </div>
+
+        <h3>
+          O que é Cyberbullying?
+        </h3>
+
+        <p>
+          É uma forma de bullying praticada por meio da internet,
+          redes sociais, jogos, aplicativos ou mensagens.
+        </p>
+
+        <ul class="list">
+
+          <li>
+            <span class="check"
+                  style="background:#e6efff;color:#356ee0">
+              ✓
+            </span>
+
+            Mensagens e comentários ofensivos
+          </li>
+
+          <li>
+            <span class="check"
+                  style="background:#e6efff;color:#356ee0">
+              ✓
+            </span>
+
+            Divulgação de imagens sem autorização
+          </li>
+
+          <li>
+            <span class="check"
+                  style="background:#e6efff;color:#356ee0">
+              ✓
+            </span>
+
+            Criação de perfis falsos
+          </li>
+
+          <li>
+            <span class="check"
+                  style="background:#e6efff;color:#356ee0">
+              ✓
+            </span>
+
+            Exposição e humilhação em grupos e redes
+          </li>
+
+        </ul>
+
+        <div class="note"
+             style="background:#eaf1ff;color:#304d83">
+
+          🔵 Conteúdos online podem alcançar muitas pessoas rapidamente,
+          tornando a situação ainda mais difícil de lidar.
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- COMO COMBATER -->
+
+<section class="section dark" id="combater">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="eyebrow"
+           style="color:#b56cff">
+
+        AÇÃO
+
+      </div>
+
+      <h2>
+        Como combater?
+      </h2>
+
+      <p>
+        Pequenas atitudes podem fazer uma grande diferença
+        dentro e fora da escola.
+      </p>
+
+    </div>
+
+
+    <div class="steps">
+
+      <article class="step reveal">
+
+        <div class="num">
+          01
+        </div>
+
+        <h3>
+          Não participe
+        </h3>
+
+        <p>
+          Não pratique, compartilhe ou incentive qualquer tipo
+          de agressão ou humilhação.
+        </p>
+
+      </article>
+
+
+      <article class="step reveal">
+
+        <div class="num">
+          02
+        </div>
+
+        <h3>
+          Denuncie
+        </h3>
+
+        <p>
+          Se presenciar algo, procure um professor,
+          responsável ou outro adulto de confiança.
+        </p>
+
+      </article>
+
+
+      <article class="step reveal">
+
+        <div class="num">
+          03
+        </div>
+
+        <h3>
+          Apoie
+        </h3>
+
+        <p>
+          Mostre que a pessoa não está sozinha.
+          Escutar e acolher também é uma forma de ajudar.
+        </p>
+
+      </article>
+
+
+      <article class="step reveal">
+
+        <div class="num">
+          04
+        </div>
+
+        <h3>
+          Construa respeito
+        </h3>
+
+        <p>
+          Valorize as diferenças e ajude a criar
+          um ambiente escolar seguro e acolhedor.
+        </p>
+
+      </article>
+
+    </div>
+
+
+    <!-- CTA -->
+
+    <div class="cta reveal" id="ajuda">
+
+      <div>
+
+        <h2>
+          Respeitar as diferenças é uma atitude que transforma.
+        </h2>
+
+        <p>
+          Juntos, podemos construir uma escola mais segura,
+          acolhedora e feliz para todos.
+        </p>
+
+      </div>
+
+      <a class="btn primary" href="#inicio">
+        💜 Fazer a diferença
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- RODAPÉ -->
+
+<footer>
+
+  <div class="footerin">
+
+    <div>
+
+      <div class="footerbrand">
+        🛡️ RESPEITO SEMPRE
+      </div>
+
+      <div class="small">
+        Respeito não tem preço. Gentileza não tem limite.
+      </div>
+
+    </div>
+
+    <div class="small">
+      Projeto educativo • Bullying e Cyberbullying
+    </div>
+
+    <div class="small">
+      © 2026 — Todos os direitos reservados
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- BOTÃO VOLTAR AO TOPO -->
+
+<a href="#inicio" class="top" id="top">
+  ↑
+</a>
+
+
+<script>
+
+/* ANIMAÇÃO AO DESCER A PÁGINA */
+
+const observer = new IntersectionObserver(
+
+  (entries)=>{
+
+    entries.forEach(entry=>{
+
+      if(entry.isIntersecting){
+
+        entry.target.classList.add("show");
+
+      }
+
+    });
+
+  },
+
+  {
+    threshold:.12
+  }
+
+);
+
+
+document
+  .querySelectorAll(".reveal")
+  .forEach(element=>{
+
+    observer.observe(element);
+
+  });
+
+
+/* BOTÃO DE VOLTAR AO TOPO */
+
+const topBtn =
+  document.getElementById("top");
+
+
+window.addEventListener("scroll",()=>{
+
+  if(window.scrollY > 500){
+
+    topBtn.classList.add("show");
+
+  }else{
+
+    topBtn.classList.remove("show");
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
